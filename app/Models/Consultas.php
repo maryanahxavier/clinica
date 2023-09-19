@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Consultas extends Model
 {
     use HasFactory;
+    protected $fillable = [''];
+    public function cliente(){
+        return $this->belongsTo('App/Models/Cliente');
+    }
 }
