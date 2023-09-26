@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
-    protected $fillable = [''];
+    protected $fillable = ['nome'];
     public function consultas(){
-        return $this->hasmany('App/Models/Consultas', );
+        return $this->hasmany('App/Models/Consultas', 'cliente_id');
     }
     
 }
