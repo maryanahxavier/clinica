@@ -66,8 +66,7 @@ class controladorCliente extends Controller
 
     /**
      * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+     */Cliente
     {
         $cliente = Cliente::find($id);
         if(isset('$dados')){
@@ -107,7 +106,13 @@ class controladorCliente extends Controller
 
     public function procurarClinte(Request $request)
     {
-       ///terminar
-
+       $descricao = $request->input('descricaoCliente')
+       $cliente = DB::table('cliente')->select('id', 'descricaoCliente')
+            ->where(DB::raw('lower(descricaoCliente)') , 'like', % . strtolower('$descricao'). '&') -> get();
+            if(isset($cliente))
+             return view('sistema.cliente', compact('cliente'));
+            else
+             return redirect('/cliente')-> with('danger', 'Não foi encontrado esse cliente');
+             
     }
 }

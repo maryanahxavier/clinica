@@ -2,7 +2,7 @@
 @section('title', 'Página inicial -Clínica')
 @section('content')
 <div class= "jumbotron">
-    <p class= "h3 text-center py-"4>Clínica Mary Luana</p>
+    <p class= "h3 text-center py-"p>Clínica Mary Luana</p>
 </div>
 <div class= "row">
     <div class= "col-md-6 col-sm-4 ingCapa">
